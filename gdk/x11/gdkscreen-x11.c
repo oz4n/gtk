@@ -1654,3 +1654,16 @@ gdk_x11_screen_class_init (GdkX11ScreenClass *klass)
                   G_TYPE_NONE,
                   0);
 }
+
+gdouble
+gdk_screen_get_monitor_scale_factor (GdkScreen *screen,
+                                     gint       monitor_num)
+{
+  gdouble scale_factor = 1.0;
+
+  g_return_val_if_fail (GDK_IS_SCREEN (screen), 1.0);
+  g_return_val_if_fail (monitor_num < gdk_screen_get_n_monitors (screen), 1.0);
+  g_return_val_if_fail (monitor_num >= 0, 1.0);
+
+  return scale_factor;
+}
