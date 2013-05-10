@@ -3640,6 +3640,7 @@ draw_icon (GtkWidget            *widget,
 
   _gtk_icon_helper_draw (icon_info->icon_helper,
                          context, cr,
+                         gtk_widget_get_scale_factor (widget),
                          x, y);
 
   gtk_style_context_restore (context);
